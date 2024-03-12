@@ -1,0 +1,15 @@
+//increment and decrement operator 
+#include <iostream>
+using namespace std;
+int main() {
+ int a=5;
+ int b = ++a + ++a + a++;
+ cout<<"a: "<<a<<endl;
+ cout<<"b: "<<b<<endl;
+    return 0;
+}
+/*
+output:
+a: 8
+b: 21
+*/
