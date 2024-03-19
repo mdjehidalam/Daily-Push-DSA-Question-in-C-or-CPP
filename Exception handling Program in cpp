@@ -1,0 +1,15 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,b;
+    try{
+        cout<<"Enter the two value : "<<flush;
+        cin>>a>>b;
+        if(b==0)throw 0;
+        cout<<"Division : "<<a/b<<endl;
+    }catch(int x)// what value throw that value receive by catch have to receive as arguements what throw value 
+    {
+        cout<<"Division is not posible "<<endl;
+    }
+}
