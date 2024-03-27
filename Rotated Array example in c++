@@ -1,0 +1,47 @@
+ #include<iostream>
+ using namespace std;
+ int getIndex(int a[],int n,int key);
+ int main()
+ {
+     int n;
+     cin>>n;
+     int a[n];
+     for(int i=0; i<n; i++)
+     {
+         cin>>a[i];
+     }
+     int key;
+     cin>>key;
+     cout<<getIndex(a,5,key);
+ }
+ int getIndex(int a[],int n,int key){
+     int s=0,e=n-1;
+     while(s<=e)
+     {
+         int mid=(s+e)/2;
+         //case 1
+         if(a[mid]<a[e])
+         {
+             if(a[mid]>key && a[e]<key)
+             {
+                 s=mid+1;
+             }else{
+                 e=mid-1;
+             }
+         }
+         //case 2
+         if(a[mid]>a[s])
+         {
+             if(a[s]>key&&a[mid]<key)
+             {
+                 e=mid-1;
+             }else{
+                 s=mid+1;
+             }
+         }
+         //case 3
+         if(a[mid]==key)
+         return mid;
+     }
+     return -1;
+ }
