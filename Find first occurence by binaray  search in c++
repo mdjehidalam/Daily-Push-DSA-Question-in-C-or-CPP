@@ -1,0 +1,26 @@
+//Binary search find first occurence
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int arr[]={1,2,3,47,8,8,8,9,6};
+    int n=sizeof(arr)/sizeof(arr[1]);
+    int target;
+    cin>>target;
+    sort(arr,arr+n);
+    int s=0,e=n;
+    while(s<e)
+    {
+        int mid= (s+e)/2;
+        if(arr[mid]==target)
+        {
+         cout<<"first occurence: "<<mid<<endl;  
+        }
+        if(arr[mid]>target)
+        {
+            s=mid+1;
+        }else{
+            e=mid;
+        }  
+    }
+}
